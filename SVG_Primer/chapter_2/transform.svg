@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <path d="M 50,50 C 100,300 150,300 200,50 Z" fill="red" opacity="0.5" transform="rotate(20,0,0)"></path>
+    <path d="M 50,50 C 100,300 150,300 200,50 Z" fill="yellow" opacity="0.5" transform="rotate(20,50,50)"></path>
+    <path d="M 50,50 C 100,300 150,300 200,50 Z" fill="pink" opacity="0.5" transform="translate(-25,-25),scale(1.5)"></path>
+    <path d="M 50,50 C 100,300 150,300 200,50 Z" fill="grey" opacity="0.5"></path>
+</svg>

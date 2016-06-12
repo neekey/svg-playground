@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 0 L 50 50 100 50 Z" stroke="red" stroke-width="5" fill="none" stroke-dasharray="5,1,8"></path>
+
+    <!-- different fill rule -->
+    <path d="M 70,290 L 150,150 200,250 40,250 100,150 170,290" fill-rule="evenodd"/>
+
+    <!-- combine multiple path segments into a common path definition -->
+    <path fill="orange"
+          d="M 10,215 210,215 110,42 z M 10,100 210,100 110,273 z" stroke="purple" stroke-width="3" fill-rule="evenodd" />
+
+
+
+</svg>
