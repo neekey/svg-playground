@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <embed src="./use.svg" width="500" height="500"></embed>
+    <embed src="./use.svg" width="200" height="200"></embed>
+
+    <script>
+        console.log( 'width of the first embeded svg is %d', document.embeds[0].clientWidth );
+        console.log( 'height of the second embeded svg is %d', document.embeds[0].clientHeight );
+        console.log( 'width of the first embeded svg is %d', document.embeds[1].clientWidth );
+        console.log( 'height of the second embeded svg is %d', document.embeds[1].clientHeight );
+    </script>
+</body>
+</html>

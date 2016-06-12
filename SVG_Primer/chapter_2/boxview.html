@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<dv>
+    <p>without a viewbox</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;">
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</dv>
+
+<div>
+    <p>with a viewbox</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;" viewBox="100 100 50 100" >
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</div>
+
+<div>
+    <p>with a viewbox, xMinYMin meet</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;" viewBox="100 100 50 100" preserveAspectRatio="xMinYMin meet" >
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</div>
+
+<div>
+    <p>with a viewbox, xMaxYMin meet</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;" viewBox="100 100 50 100" preserveAspectRatio="xMaxYMin meet" >
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</div>
+
+<div>
+    <p>with a viewbox, xMaxYMin slice</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;" viewBox="100 100 50 100" preserveAspectRatio="xMaxYMin slice" >
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</div>
+
+<div>
+    <p>with a viewbox, none</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="border: 2px solid red;" viewBox="100 100 50 100" preserveAspectRatio="none" >
+        <ellipse cx="125" cy="150" rx="25" ry="50" fill="red"></ellipse>
+    </svg>
+</div>
+
+
+</body>
+</html>
+
+
