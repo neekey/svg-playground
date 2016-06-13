@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+        <linearGradient id="linear">
+            <stop offset="0" stop-color="lightgreen"/>
+            <stop offset="1" stop-color="lightblue"/>
+        </linearGradient>
+
+        <radialGradient id="radial">
+            <stop offset="0" stop-color="orange"/>
+            <stop offset="1" stop-color="red"/>
+        </radialGradient>
+
+        <linearGradient id="linear-multi-stop">
+            <stop offset="0" stop-color="green"/>
+            <stop offset="0.25" stop-color="lightgreen"/>
+            <stop offset="0.5" stop-color="lightblue"/>
+            <stop offset="1" stop-color="blue"/>
+        </linearGradient>
+
+        <radialGradient id="radial-multi-stop">
+            <stop offset="0" stop-color="pink"/>
+            <stop offset="0.25" stop-color="purple"/>
+            <stop offset="0.5" stop-color="pink"/>
+            <stop offset="1" stop-color="orange"/>
+        </radialGradient>
+
+        <linearGradient id="linear-rotate" gradientTransform="rotate(30 .5 .5),translate(0.3,0.3),scale(0.5)">
+            <stop offset="0" stop-color="green"/>
+            <stop offset="0.3" stop-color="blue"/>
+            <stop offset="0.6" stop-color="green"/>
+            <stop offset="1" stop-color="blue"/>
+        </linearGradient>
+
+        <radialGradient id="radial-rotate" fx=".8" fy="0.8" gradientTransform="translate(-0.1,-0.1)">
+            <stop offset="0" stop-color="orange"/>
+            <stop offset="0.2" stop-color="red"/>
+            <stop offset="0.4" stop-color="orange"/>
+            <stop offset="0.6" stop-color="red"/>
+            <stop offset="0.8" stop-color="orange"/>
+            <stop offset="1" stop-color="red"/>
+        </radialGradient>
+
+        <linearGradient id="linear-opacity">
+            <stop offset="0" stop-color="lightgreen"/>
+            <stop offset="0.2" stop-color="lightblue" stop-opacity="0.5"/>
+            <stop offset="0.4" stop-color="lightgreen" stop-opacity="1"/>
+            <stop offset="0.6" stop-color="lightblue" stop-opacity="0.5"/>
+            <stop offset="0.8" stop-color="lightgreen"/>
+            <stop offset="1" stop-color="lightblue"/>
+        </linearGradient>
+
+
+        <radialGradient id="radial-rotate-spread" fx=".8" fy="0.8" gradientTransform="translate(0.3,0.3),scale(0.4)" spreadMethod="reflect" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="orange"/>
+            <stop offset="0.2" stop-color="red"/>
+            <stop offset="0.4" stop-color="orange"/>
+            <stop offset="0.6" stop-color="red"/>
+            <stop offset="0.8" stop-color="orange"/>
+            <stop offset="1" stop-color="red"/>
+        </radialGradient>
+
+        <radialGradient id="radial-user-space" fx=".8" fy="0.8" spreadMethod="reflect" gradientTransform="translate(0.3,0.3),scale(0.4)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="orange"/>
+            <stop offset="0.2" stop-color="red"/>
+            <stop offset="0.4" stop-color="orange"/>
+            <stop offset="0.6" stop-color="red"/>
+            <stop offset="0.8" stop-color="orange"/>
+            <stop offset="1" stop-color="red"/>
+        </radialGradient>
+
+    </defs>
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#linear)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial)" transform="translate(100,100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial-multi-stop)" transform="translate(0,100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#linear-multi-stop)" transform="translate(100,0)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#linear-rotate)" transform="translate(-100,0)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial-rotate)" transform="translate(-100,-100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial-rotate)" transform="translate(0,-100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#linear-opacity)" transform="translate(0,-100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial-rotate-spread)" transform="translate(100,-100)" />
+
+    <path d="M 100 200 200 200 150 100 z" id="triangle"
+          stroke="black" stroke-width="2" fill="url(#radial-user-space)" transform="translate(-100,100)" />
+
+</svg>

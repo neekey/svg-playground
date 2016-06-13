@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter id="A">
+        <feGaussianBlur stdDeviation="2" />
+    </filter>
+
+    <rect x="0" y="0" width="80" height="100" fill="red" transform="scale(6)"></rect>
+    <rect x="0" y="0" width="70" height="92" fill="blue" transform="scale(6)"></rect>
+    <image xlink:href='./img.png' y="0" x="0" width="70" height="92" filter="url(#A)" transform="scale(6)"/>
+
+</svg>

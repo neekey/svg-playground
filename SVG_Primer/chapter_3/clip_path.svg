@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient id="linear">
+            <stop offset="0" stop-color="lightgreen"/>
+            <stop offset="1" stop-color="lightblue"/>
+        </linearGradient>
+
+        <clipPath id="CP">
+            <ellipse cx="35" cy="46" rx="35" ry="25"/>
+        </clipPath>
+
+        <!-- Two <clipPath>s may be intersected -->
+        <clipPath id="CP2" clip-path="url(#CP)">
+            <rect x="25" y="0" width="20" height="92"></rect>
+            <rect x="0" y="0" width="10" height="92"></rect>
+            <rect x="60" y="0" width="10" height="92"></rect>
+        </clipPath>
+    </defs>
+
+    <g transform="scale(6)">
+        <rect x="0" y="0" width="70" height="92" fill="url(#linear)"></rect>
+        <image xlink:href='./img.png' y="0" x="0" width="70" height="92"  clip-path="url(#CP2)"/>
+    </g>
+
+</svg>
