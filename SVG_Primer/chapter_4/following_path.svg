@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="curve" stroke="black" fill="none" stroke-width="5"
+          d="M 110,200 C 300,130 400,350 450,150 500,-50 -90,270 110,200" />
+
+    <ellipse cx="0" cy="0" rx="20" ry="14" fill="#aaa" stroke="#666"
+             stroke-width="2" opacity=".8">
+        <animateMotion dur="5s" rotate="auto" repeatCount="indefinite" keyTimes="0;.6;1"
+                       calcMode="spline" keySplines="0 0 1 0;0 0 1 0" >
+            <mpath xlink:href="#curve"/>
+        </animateMotion>
+    </ellipse>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="curve" stroke="black" fill="none" stroke-width="5"
+          d="M 110,150 C 300,80 400,300 450,100 500,-100 -90,220 110,150" />
+    <ellipse rx="20" ry="12" fill="#aaa" stroke="#666" stroke-width="2" opacity=".8">
+        <animateMotion dur="2s" rotate="auto" repeatCount="indefinite" >
+            <mpath xlink:href="#curve"/>
+        </animateMotion>
+    </ellipse>
+
+    <ellipse rx="20" ry="12" fill="#aaa" stroke="#666" stroke-width="2" opacity="0">
+        <animateMotion id="AM" dur="2s" begin="1" rotate="auto" repeatCount="indefinite" >
+            <mpath xlink:href="#curve"/>
+        </animateMotion>
+        <!-- we can also set begin="AM.begin+1" or begin="1s;AM.begin"-->
+        <set attributeName="opacity" to="0.8" begin="AM.begin"></set>
+    </ellipse>
+
+    <text x="35%" y="35%" font-size="30" fill="red" opacity="1">
+        <animate attributeName="font-size" begin="click"
+                 values="8;50;8" dur="6" repeatCount="indefinite"/>
+        Click
+        <set attributeName="opacity" to="0.5" begin="mouseover"></set>
+        <set attributeName="opacity" to="1" begin="mouseout"></set>
+    </text>
+
+    <g transform="translate(0,200)">
+        <path id="curve2" stroke="black" fill="none" stroke-width="5"
+              d="M 110,150 C 300,80 400,300 450,100 500,-100 -90,220 110,150" />
+
+        <ellipse id="firstOne" rx="20" ry="12" fill="#aaa" stroke="#666" stroke-width="2" opacity="0">
+            <set attributeName="opacity" to=".8" begin="0;beginBtn.click" />
+            <set attributeName="opacity" to="0" begin="endBtn.click" />
+            <animateMotion id="firstOneAnim" dur="2s" end="endBtn.click" fill="freeze" begin="0;beginBtn.click"
+                           rotate="auto" repeatCount="indefinite" >
+                <mpath xlink:href="#curve2"/>
+            </animateMotion>
+        </ellipse>
+
+        <ellipse id="secondOne" rx="20" ry="12" fill="#red" stroke="#666" stroke-width="2" opacity="0">
+            <set attributeName="opacity" to=".8" begin="firstOneAnim.begin+1" />
+            <set attributeName="opacity" to="0" begin="endBtn.click" />
+            <animateMotion id="secondOneAnim" dur="2s" end="endBtn.click" fill="freeze" begin="firstOneAnim.begin+1"
+                           rotate="auto" repeatCount="indefinite" >
+                <mpath xlink:href="#curve2"/>
+            </animateMotion>
+        </ellipse>
+
+        <g id="B">
+            <text id="beginBtn" x="260" y="220" font-size="20" display="none" >go
+                <set attributeName="display" to="none" begin="click"/>
+                <set attributeName="display" to="inline" begin="endBtn.click"/>
+            </text>
+            <text id="endBtn" x="260" y="220" font-size="20" display="inline" >stop
+                <set attributeName="display" to="none" begin="click"/>
+                <set attributeName="display" to="inline" begin="beginBtn.click"/>
+            </text>
+        </g>
+    </g>
+
+</svg>

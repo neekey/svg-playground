@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+    <ellipse cx="216" cy="242" rx="160" ry="219" fill="#964">
+        <animateTransform attributeName="transform" type="translate" dur="4s"
+                          values="0,0;-110,-140;0,0" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" additive="sum" type="scale"
+                          dur="4s" values="1;1.5;1" repeatCount="indefinite"/>
+        <!-- 因为 attributeName 一样所以会覆盖啦,所以要加上 additive 这个属性 -->
+        <animateTransform attributeName="transform" additive="sum" type="rotate"
+                          dur="7s" values="0,216 242;360 216 242" repeatCount="indefinite"/>
+    </ellipse>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <filter id="A">
+        <feGaussianBlur stdDeviation="2">
+            <animate attributeName="stdDeviation" dur="5s"
+                     values="0;0;0.5;2;0"
+                     repeatCount="indefinite"/>
+        </feGaussianBlur>
+    </filter>
+
+    <image xlink:href='./img.png' y="0" x="0" width="70" height="92" filter="url(#A)" transform="scale(6)"/>
+
+    <rect x="5%" y="5%" fill="cyan"
+          height="25%" width="20%" opacity="0.5">
+        <animate attributeName="fill" dur="15s"
+                 values="green;yellow;magenta;white;cyan"
+                 repeatCount="indefinite"/>
+    </rect>
+</svg>
