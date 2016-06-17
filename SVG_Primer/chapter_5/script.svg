@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <image id="R" xlink:href="img.png" width="100" height="100" x="0" y="0" />
+
+    <script>
+        <![CDATA[
+        var rect = document.getElementById( 'R' );
+        console.log( 'attributes length', rect.attributes.length );
+
+        for( var attribute, index = 0; index < rect.attributes.length; index++ ){
+            attribute = rect.attributes.item( index );
+            console.log( '%s: %s', attribute.nodeName, attribute.nodeValue );
+        }
+
+        var NS = 'http://www.w3.org/1999/xlink';
+        console.log( 'using getAttributeNS:', rect.getAttributeNS( NS, 'href' ) );
+
+        setTimeout(function(){
+            rect.setAttribute( 'opacity', '0.5' );
+            rect.setAttributeNS( NS, 'href', 'img2.png' );
+        }, 2000);
+        ]]>
+    </script>
+</svg>

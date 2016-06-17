@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script><![CDATA[
+    var xmlns="http://www.w3.org/2000/svg"
+    var y=70
+    var Root=document.documentElement
+
+    function create(){
+        R=document.createElementNS(xmlns,"rect")
+        R.setAttributeNS(null,"width",180)
+        R.setAttributeNS(null,"height",30)
+        R.setAttributeNS(null,"x",30)
+        R.setAttributeNS(null,"y",y)
+        y=y+30
+        R.setAttributeNS(null,"stroke","black")
+        R.setAttributeNS(null,"fill",color())
+        Root.appendChild(R)
+    }
+
+    function color(){
+        var r=Math.random()*4096
+        return "#"+Math.floor(r).toString(16)
+    }
+
+    ]]></script>
+    <g onclick="create()">
+        <rect x="30" y="40" width="180"
+              height="30" fill="#ddd" stroke="black" />
+        <text id="T" x="50" y="63"
+              font-size="18pt" fill="black">
+            Create Rect</text>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script><![CDATA[
+    var xmlns="http://www.w3.org/2000/svg"
+    var h=100
+    var Root=document.documentElement
+    function create(){
+        T=document.createElementNS(xmlns,"text")
+        T.setAttributeNS(null,"x",30)
+        T.setAttributeNS(null,"y",h)
+        T.setAttributeNS(null,"font-size","18pt")
+        h=h+30
+
+        // document.createTextNode()
+        Msg=document.createTextNode(h)
+        T.appendChild(Msg)
+        Root.appendChild(T)
+    }
+    ]]></script>
+    <g onclick="create()">
+        <rect x="30" y="40" width="180" fill="#ddd"
+              height="30" stroke="black"/>
+        <text id="T" x="50" y="63" font-size="18pt"
+              fill="black">
+            Create Text</text>
+    </g>
+</svg>

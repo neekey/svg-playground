@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script><![CDATA[
+    function startMove(){
+        C=document.getElementById("C")
+        document.documentElement.setAttribute("onmousemove","moveIt(evt)")
+    }
+    function moveIt(evt){
+        C.setAttributeNS(null,"cx",evt.clientX)
+        C.setAttributeNS(null,"cy",evt.clientY)
+    }
+    function drop(){
+        document.documentElement.setAttributeNS(null, "onmousemove",null)
+    }
+    ]]></script>
+    <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+    <circle id="C" cx="60" cy="60" r="22"
+            fill="lightgrey" stroke="black" stroke-width="8"
+            onmousedown="startMove()" onmouseup="drop()"/>
+</svg>

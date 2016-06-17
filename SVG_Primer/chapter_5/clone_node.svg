@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script><![CDATA[
+    var xmlns="http://www.w3.org/2000/svg"
+    var y=0
+    var Root=document.documentElement
+    function clone(){
+        var G=document.getElementById("G")
+
+        // use the first parameter to indicate if you want to duplicate the subordinate node structure inside the object.
+        var NewG=G.cloneNode(true)
+
+        var move="translate("+0+","+(y+=30)+")"
+        NewG.setAttributeNS(null,"transform",move)
+        Root.appendChild(NewG)
+    }
+    ]]></script>
+    <g onclick="clone()" id="G">
+        <rect x="30" y="40" width="180" id="R"
+              height="30" fill="#ddd" stroke="black" />
+        <text x="50" y="63" font-size="18pt" fill="black">
+            Clone Group</text>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" >
+    <style type="text/css">
+        ellipse,path{stroke:black;stroke-width:1;fill-opacity:0.5;stroke-opacity:1;}
+    </style><script><![CDATA[
+function bisect(evt){
+    var B=evt.target
+    var E=document.getElementById("E");
+    P=B.getPointAtLength(B.getTotalLength()/2)
+    E.setAttribute("cx", P.x);
+    E.setAttribute("cy", P.y);
+    var C=document.getElementById("coords").nodeValue="("+P.x+","+P.y+")"
+}
+]]></script>
+    <text x="20" y="22" font-size="18pt">getPointAtLength</text>
+    <text id="status" x="300" y="22" font-size="18pt">status</text>
+    <text id="coords" x="250" y="42" font-family="helvetica" font-size="12"
+          fill="darkblue"> </text>
+    <text x="100" y="40" font-size="12">Click any path to bisect it.</text>
+    <path d="M 0 125 C 100 0 200 250 300 125" fill="#afa" onclick="bisect(evt)"/>
+    <path d="M 0 200 C 100 0 200 250 300 200" fill="#faa" onclick="bisect(evt)"/>
+    <path d="M 0 50 C 100 0 200 250 300 50" fill="#aaf" onclick="bisect(evt)"/>
+    <path transform="translate(100,0)" d="M 200,100 350,50 400,100 z" fill="#edf"
+          onclick="bisect(evt)"/>
+    <path transform="translate(100,60)" d="M 200 100 350 50 400 100 A 100 30 0 0 1 400 150 z"
+          fill="#fd9" onclick="bisect(evt)"/>
+    <ellipse id="E" cx="-10" cy="10" fill="yellow" rx="6" ry="4"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" >
+    <script><![CDATA[
+    var Root=document.documentElement
+
+    function hilite(evt) {
+        T=evt.target
+        point=Root.createSVGPoint();
+        point.x=evt.clientX
+        point.y=evt.clientY
+
+        s=T.firstChild.nodeValue
+        p=T.getCharNumAtPosition(point);
+
+        msg=p+":"+s.charAt(p)
+        m=document.getElementById("m")
+        m.firstChild.nodeValue=msg
+        T.selectSubString(p,1)
+    }
+    ]]></script>
+    <text onmousemove="hilite(evt)" font-size="16pt" x="50"
+          y="20">getCharNumAtPosition and selectSubString</text>
+    <text id="status" onmousemove="hilite(evt)" x="75" y="60"
+          font-size="12pt">status:</text>
+    <text id="m" font-family="helvetica" x="150" y="60"
+          font-size="28pt" fill="red"> </text>
+    <text onmousemove="hilite(evt)" x="50" y="100" font-size="18pt"
+          fill="darkblue">Try moving the mouse over a text object</text>
+</svg>

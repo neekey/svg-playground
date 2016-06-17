@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <text id="text" x="0" y="100" font-size="60" fill="blue">Doing text - Click</text>
+    <text id="text-scale" x="0" y="100" font-size="60" fill="green" transform="scale(2)">Doing text - Click</text>
+
+    <script><![CDATA[
+
+        var root = document.documentElement;
+        var xml = root.getAttribute( 'xmlns' );
+        var text = document.getElementById( 'text' );
+        var textScale = document.getElementById( 'text-scale' );
+        // getBBox responds to original untransformed values of a drawn object
+        var textBounding = textScale.getBBox();
+        console.log( textBounding );
+
+        var rect = document.createElementNS( xml, 'rect' );
+        rect.setAttribute( 'x', textBounding.x );
+        rect.setAttribute( 'y', textBounding.y );
+        rect.setAttribute( 'width', textBounding.width );
+        rect.setAttribute( 'height', textBounding.height );
+        rect.setAttribute( 'fill', 'orange' );
+        rect.setAttribute( 'stroke', 'red' );
+        root.insertBefore( rect, text );
+
+    ]]>
+    </script>
+</svg>

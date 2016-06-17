@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     onload="create()">
+
+    <script>
+    <![CDATA[
+    var xmlns="http://www.w3.org/2000/svg";
+    function create(){
+
+        // since it's a SVG element, we need to use this method instead of createElement
+        var C = document.createElementNS(xmlns,"circle");
+        C.setAttributeNS(null,"r","50");
+
+        // and we dont have document.body here
+        document.documentElement.appendChild(C);
+
+        // should be null
+        console.log( 'document.body', document.body );
+        console.log( 'document.head', document.head );
+    }
+    ]]>
+    </script>
+</svg>

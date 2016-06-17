@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     onload="alert('message')">
+    <ellipse cx="75" cy="75" rx="40" ry="30" fill="blue" onactivate="alert('active')"/>
+
+    <ellipse cx="150" cy="75" rx="10" ry="40" fill="blue">
+        <animate id="A" attributeName="rx" begin="click"
+                 end="A.begin+4"
+                 onbegin="alert('started')" onend="alert('stopped')"
+                 dur="4s" values="10;110;10" repeatCount="indefinite"/>
+    </ellipse>
+</svg>

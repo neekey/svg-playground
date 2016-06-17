@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <g onclick="replace()" id="G">
+        <rect x="30" y="40" width="180" id="R"
+              height="30" fill="#ddd" stroke="black" />
+        <text x="50" y="63" font-size="18pt" fill="black">
+            Replace Child</text>
+    </g>
+
+    <g id="child">
+        <rect x="30" y="70" width="180" id="R"
+              height="30" fill="#red" stroke="black" />
+        <text x="50" y="93" font-size="18pt" fill="white" id="text">child</text>
+    </g>
+
+    <script>
+    <![CDATA[
+
+    var btn = document.getElementById( 'G' );
+    var index = 0;
+    function replace(){
+        var child = document.getElementById( 'child' );
+        var newChild = child.cloneNode( true );
+        newChild.getElementsByTagName( 'text' )[0].textContent = 'child' + index++;
+        document.documentElement.replaceChild( newChild, child );
+    }
+    ]]>
+    </script>
+</svg>

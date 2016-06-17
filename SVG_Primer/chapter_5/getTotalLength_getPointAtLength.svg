@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <path id="P" d="M 200,100 350,50 400,100 z" fill="#edf"/>
+    <script><![CDATA[
+    var namespace = document.documentElement.getAttribute( 'xmlns' );
+    var Path=document.getElementById("P");
+    var Length=Path.getTotalLength();
+    var halfLength=Length/2;
+    var Mid=Path.getPointAtLength(halfLength);
+    plotPoint(Mid.x,Mid.y);
+    //where plotPoint draws, say, an ellipse at (P.x, P.y)
+
+    function plotPoint( x, y ){
+        var point = document.createElementNS( namespace, 'circle' );
+        point.setAttribute( 'cx', x );
+        point.setAttribute( 'cy', y );
+        point.setAttribute( 'r', '5' );
+        point.setAttribute( 'r', '5' );
+        point.setAttribute( 'fill', 'red' );
+        document.documentElement.appendChild( point );
+    }
+    ]]></script>
+</svg>

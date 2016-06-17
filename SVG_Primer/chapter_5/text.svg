@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+    <text id="text" x="50" y="63" font-size="18pt" fill="red">
+        hello world
+        <set attributeName="opacity" to="1" begin="0" >set value</set>
+    </text>
+
+    <script>
+    <![CDATA[
+        var text = document.getElementById( 'text' );
+        // firstChild
+        console.log( 'firstChild', text.firstChild.nodeName, text.firstChild.nodeValue );
+        console.log( 'childNodes', text.childNodes[1].nodeName, text.childNodes[1].nodeValue );
+        console.log( 'children', text.children.length, text.children[0].nodeName, text.children[0].nodeValue );
+        console.log( 'textContent', text.textContent );
+    ]]>
+    </script>
+</svg>
