@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     onload="startup(evt)">
+    <script><![CDATA[
+    xmlns="http://www.w3.org/2000/svg"
+    xlinkns="http://www.w3.org/1999/xlink"
+    var D=document; var count=3
+
+    function startup(evt){
+        B=D.getElementById("B")
+        D.getElementById("A").beginElement()
+        var t=2000
+        window.setTimeout("B.beginElement()",t)
+    }
+
+    function rebuild(evt){
+        var Q=evt.target
+        T=document.getElementById(Q.id+"T")
+        T.firstChild.nodeValue=count++
+        Q.beginElement();
+    }
+
+    var paused = false;
+    function pause(){
+        if( paused ){
+            document.documentElement.unpauseAnimations();
+        }
+        else {
+            document.documentElement.pauseAnimations();
+        }
+
+        paused = !paused;
+    }
+    ]]>
+    </script>
+    <rect x="0" y="0" height="100%"
+          id="Canvas" width="100%" fill="#147"/>
+    <path id="P" d="M 0 200 C 100 0 200 400 300 200"
+          fill="none" stroke="#804" stroke-width="3">
+        <animate attributeName="d" dur="1s"
+                 repeatCount="indefinite"
+                 values=" M -10 200 C 150 100 300 300 450 200;
+ M -10 200 C 150 300 300 100 450 200;
+ M -10 200 C 150 100 300 300 450 200"/>
+    </path>
+
+    <g>
+        <animateMotion dur="4s" id="A" rotate="auto"
+                       begin="indefinite" onend="rebuild(evt)">
+            <mpath xlink:href="#P"/></animateMotion>
+        <ellipse fill="yellow" cx="0" cy="0" rx="22" onclick="pause()"
+                 ry="14" stroke="#804" stroke-width="5"/>
+        <text id="AT" x="-10" y="7" font-size="12pt">1</text>
+    </g>
+    <g opacity="0">
+        <set attributeName="opacity" to="1" begin="B.begin" />
+        <set attributeName="opacity" to="0" begin="B.end" />
+        <animateMotion dur="3.3s" id="B" rotate="auto"
+                       begin="indefinite" onend="rebuild(evt)">
+            <mpath xlink:href="#P"/>
+        </animateMotion>
+            <ellipse fill="cyan" cx="0" cy="0" rx="22" ry="14" onclick="pause()"
+                     stroke="#804" stroke-width="5"/>
+            <text id="BT" x="-10" y="7" font-size="12pt">2</text>
+    </g>
+</svg>
