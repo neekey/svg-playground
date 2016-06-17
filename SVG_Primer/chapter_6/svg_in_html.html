@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <embed id="svg" src="index.svg"></embed>
+
+    <svg id="inline-svg" xmlns="http://www.w3.org/2000/svg">
+        <rect id="rect" x="0" y="0" width="50" height="50" onclick="topAlert()"></rect>
+    </svg>
+
+    <script>
+
+        /**
+         * Embed SVG
+         */
+        var embed = document.getElementById( 'svg' );
+        embed.onload = function(){
+            var svg = embed.getSVGDocument();
+            var circle = svg.getElementById( 'circle' );
+            console.log( circle );
+        };
+
+        var rect = document.getElementById( 'rect' );
+        console.log( rect, rect.getAttribute( 'x' ) );
+
+        function topAlert(){
+            alert( 'from HTML' );
+        }
+    </script>
+</body>
+</html>
